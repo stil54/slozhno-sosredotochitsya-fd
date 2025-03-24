@@ -1,5 +1,373 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  width: 100%;
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  font-weight: var(--main-font-weight);
+  line-height: 1.3;
+  color: var(--main-font-color);
+}
+
+/* Header */
+
+.header__theme-menu {
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: max(668px, 100vh);
+  padding: 10px;
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color, #db00ff);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.8;
+  text-wrap: wrap;
+  grid-row: 2;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+.header__text {
+  grid-row: 3;
+  justify-self: end;
+  align-self: center;
+  max-width: 20.3em;
+  block-size: fit-content;
+}
+
+.header__text-paragraph {
+  font-weight: bold;
+}
+
+.header__text-rec {
+  position: absolute;
+  display: block;
+  color: var(--accent-color, #ff0070);
+  text-transform: uppercase;
+  width: 52px;
+  top: 10px;
+  right: 19px;
+  line-height: 1.6;
+}
+
+.header__text-rec::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  top: 10px;
+  box-shadow: 0 0 4px 2px;
+  right: 0;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--decor-color);
+  border-bottom: 1px solid var(--decor-color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  color: var(--decor-color);
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  cursor: pointer;
+  /* line-height: 1; */
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--decor-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--decor-color-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--decor-color);
+}
+
+/* section 1 */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  padding-block-start: 39px;
+  padding-block-end: 40px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.section__title {
+  color: var(--decor-color);
+  font-size: inherit;
+  text-wrap: wrap;
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__content-title {
+  font-size: inherit;
+}
+
+.section__content-text {
+  font-weight: inherit;
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--main-font-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main-font-color);
+}
+
+.section__content-article-text {
+  font-size: inherit;
+  margin-block-end: 20px;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55em;
+}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+.gallery__content-title {
+  margin-block-end: 10px;
+  font-size: inherit;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: max(668px, 100vh);
+  padding: 10px;
+}
+
+.footer-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  line-height: 0.8;
+}
+
+@media (min-width: 760px) {
+  .header {
+    min-height: 1024px;
+    padding: 20px;
+  }
+
+  .header__text {
+    inline-size: 20.3em;
+  }
+
+  .header__text-rec {
+    top: 20px;
+    right: 29px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .section {
+    grid-template-columns: 236px 1fr;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+  }
+
+  .section__title {
+    grid-column: 1;
+  }
+
+  .section__lis {
+    grid-column: 2;
+  }
+
+  .what .section__list {
+    grid-column: 1 / 3;
+  }
+
+  .pictures {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+  }
+
+  .sunset {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .tape {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .street {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 20px;
+    min-height: 768px;
+  }
+
+  .header__text {
+    min-width: 50%;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .section {
+    grid-template-columns: 17.5em 1fr;
+  }
+
+  .section__title {
+    font-size: inherit;
+    color: var(--decor-color);
+    text-wrap: wrap;
+  }
+
+  .why {
+    grid-template-columns: 17.5em 1fr;
+  }
+
+  .what__content-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
 }
