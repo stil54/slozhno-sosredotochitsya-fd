@@ -12,21 +12,26 @@
   --decor-color-hover: #32312d66;
 }
 
-.theme-light .header__text-rec {
-  display: none;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --main-font: "IBM Plex Mono", sans-serif;
     --main-font-size: 18px;
     --main-font-weight: 400;
+    --main-font-color: #353430;
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
     --bg-color: #ffeef6;
     --accent-text-color: #353430;
     --decor-color: #353430;
-    --decor-color-hover: #32312d66;  
+    --decor-color-hover: #32312d66;
   }
+
+  .header__text-rec {
+    display: none;
+  }
+}
+
+.theme-light .header__text-rec {
+  display: none;
 }
