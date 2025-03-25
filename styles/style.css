@@ -212,6 +212,11 @@
   font-weight: 400;
 }
 
+.gallery {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
 .gallery__content-title {
   margin-block-end: 10px;
   font-size: inherit;
@@ -328,10 +333,6 @@
 }
 
 @media (min-width: 1024px) {
-  .header {
-    min-height: 768px;
-  }
-
   .header__text {
     min-width: 50%;
   }
@@ -363,9 +364,5 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-
-  .footer {
-    min-height: 768px;
   }
 }

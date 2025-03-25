@@ -11,3 +11,7 @@
   --decor-color: #ff0070;
   --decor-color-hover: #ff007066;
 }
+
+.theme-dark .header__text-rec {
+  display: block;
+}
